@@ -1,0 +1,148 @@
+dataset:
+  add_noise: true
+  base_version: 1
+  categorical_dims:
+  - 0
+  - 2
+  - 3
+  - 4
+  - 5
+  - 6
+  - 7
+  - 9
+  - 10
+  - 11
+  - 13
+  - 15
+  - 16
+  - 20
+  k_fold: 1
+  loss: default
+  name: treatment_german
+  num_covariate: 15
+  num_samples: 1000
+  num_sensitive: 2
+  num_treatment: 3
+  root: Data/
+  scale: default
+  sem_name: dummy
+  shuffle_train: true
+  single_split: false
+  splits:
+  - 0.8
+  - 0.1
+  - 0.1
+  type: torch
+  use_edge_attr: false
+device: cpu
+early_stopping:
+  activate: false
+  min_delta: 0.0
+  patience: 3
+  verbose: false
+gnn:
+  aggregators:
+  - sum
+  - mean
+  - min
+  - max
+  - std
+  dim_inner: 64
+  eps: 0.0
+  heads: 1
+  num_layers: 1
+  num_layers_post: 1
+  num_layers_pre: 1
+  post_layers: 1
+  pre_layers: 1
+  scalers:
+  - identity
+  - amplification
+  - attenuation
+  - linear
+  - inverse_linear
+  stage_type: skipsum
+  towers: 1
+  train_eps: false
+gnn2:
+  aggregators:
+  - sum
+  - mean
+  - min
+  - max
+  - std
+  dim_inner: 64
+  eps: 0.0
+  heads: 1
+  num_layers: 1
+  num_layers_post: 1
+  num_layers_pre: 1
+  post_layers: 1
+  pre_layers: 1
+  scalers:
+  - identity
+  - amplification
+  - attenuation
+  - linear
+  - inverse_linear
+  stage_type: skipsum
+  towers: 1
+  train_eps: false
+model:
+  act: elu
+  adjacency: true
+  base_distr: normal
+  base_to_data: false
+  beta: 1.0
+  dim_inner:
+  - 64
+  distr_u: laplace
+  distr_x: normal
+  dropout: 0.0
+  has_bn: false
+  init: null
+  lambda_: 0.01
+  latent_dim: 4
+  layer_name: nsf
+  learn_base: false
+  name: causal_nf
+  net_name: mlp
+  num_layers: 1
+  objective: elbo
+  parity: false
+  plot: false
+  scale: false
+  scale_base: false
+  shift_base: false
+optim:
+  base_lr: 0.001
+  beta_1: 0.9
+  beta_2: 0.999
+  cooldown: 0
+  factor: 0.9
+  gamma: 0.99
+  mode: min
+  momentum: 0.0
+  optimizer: adam
+  patience: 60
+  scheduler: plateau
+  step_size: 100
+  weight_decay: 0.0
+param_count: 32803
+root_dir: _models_trained/causal_nf/
+seed: 1000
+train:
+  auto_lr_find: false
+  auto_scale_batch_size: false
+  batch_size: 128
+  enable_progress_bar: true
+  inference_mode: false
+  kl: forward
+  limit_train_batches: null
+  limit_val_batches: null
+  max_epochs: 1000
+  max_time: 00:05:00:00
+  model_checkpoint: true
+  num_workers: 0
+  profiler: null
+  regularize: false
