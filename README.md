@@ -162,5 +162,4 @@ See the `notebooks/analyzer.ipynb` notebook for some representative analysis tha
 We also provide a notebook `notebooks/mitigation.ipynb` to show how we can perform bias mitigation with the counterfactuals in two stages: i. risk score estimation that is often used to make binary decisions, and ii. obtaining fairer outcomes through fairer treatments.
 
 ## Acknowledgements
-The code on Causal Normalizing Flows is based on [this repo](https://github.com/psanch21/causal-flows).
-A huge thanks to [Adrián](https://github.com/adrianjav/) and [Pablo](https://github.com/psanch21) for providing guidance on their code!
+The code on Causal Normalizing Flows is based on [this repository](https://github.com/psanch21/causal-flows).
